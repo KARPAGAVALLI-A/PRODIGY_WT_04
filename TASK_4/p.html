@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karpagavalli | Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: #f3e5f5;
+      color: #2c003e;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, #7b1fa2, #9c27b0);
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #f3e5f5;
+      transition: color 0.3s, border-bottom 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffeb3b;
+      border-bottom: 2px solid #ffeb3b;
+    }
+
+    section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2rem;
+      color: #6a1b9a;
+    }
+
+    p {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    /* About Section */
+    .about {
+      background: #ede7f6;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Skills Section with Circles */
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .skill-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #ce93d8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .skill-circle:hover {
+      transform: scale(1.1);
+      background: #ab47bc;
+    }
+
+    .skill-circle span {
+      font-size: 1.3rem;
+      margin-top: 5px;
+      color: #fff176;
+    }
+
+    /* Contact Section */
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    .contact input, .contact textarea {
+      padding: 12px;
+      border: 2px solid #9c27b0;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .contact input:focus, .contact textarea:focus {
+      border-color: #7b1fa2;
+    }
+
+    .contact button {
+      background: #7b1fa2;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .contact button:hover {
+      background: #4a148c;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #7b1fa2;
+      color: white;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Karpagavalli Portfolio</h1>
+    <nav>
+      <a href="#about">About Me</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>Hi, I am <strong>Karpagavalli</strong> from Lambuvanam, Kovilpatti, Thoothukudi district.  
+    I am currently pursuing <strong>B.E CSE</strong> at National Engineering College, Kovilpatti.</p>
+  </section>
+
+  <section id="skills" class="skills">
+    <h2>My Skills</h2>
+    <div class="skills-container">
+      <div class="skill-circle">Java <span>90%</span></div>
+      <div class="skill-circle">C <span>85%</span></div>
+      <div class="skill-circle">C++ <span>80%</span></div>
+      <div class="skill-circle">HTML <span>95%</span></div>
+      <div class="skill-circle">JavaScript <span>75%</span></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form onsubmit="return validateForm()">
+      <input type="text" id="username" placeholder="Enter your username" required>
+      <input type="email" id="email" placeholder="Enter your email address" required>
+      <textarea id="message" rows="5" placeholder="Enter your message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Karpagavalli | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    function validateForm() {
+      const username = document.getElementById("username").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (username === "" || email === "" || message === "") {
+        alert("Please fill out all fields.");
+        return false;
+      }
+      alert("Message sent successfully!");
+      return true;
+    }
+  </script>
+
+</body>
+</html>
